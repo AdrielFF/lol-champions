@@ -18,7 +18,7 @@ class Champion extends React.Component {
   componentDidMount () {
     const { params } = this.props.match
     fetch(
-      `http://ddragon.leagueoflegends.com/cdn/9.20.1/data/en_US/champion/${
+      `https://ddragon.leagueoflegends.com/cdn/9.20.1/data/en_US/champion/${
         params.id
       }.json`
     )
