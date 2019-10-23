@@ -17,7 +17,7 @@ export default function ChampionsList (props) {
               height='80'
               width='80'
               alt={champion.name}
-              src={`http://ddragon.leagueoflegends.com/cdn/9.20.1/img/champion/${
+              src={`https://ddragon.leagueoflegends.com/cdn/9.20.1/img/champion/${
                 champion.image.full
               }`}
             />

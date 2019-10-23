@@ -11,7 +11,7 @@ export default function ChampionInfo ({ champion }) {
       <Grid container>
         <Grid item lg={4}>
           <img
-            src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
+            src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
               champion.id
             }_0.jpg`}
             alt=''
