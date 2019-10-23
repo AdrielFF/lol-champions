@@ -2,8 +2,9 @@ import { makeStyles } from '@material-ui/styles'
 
 const styles = makeStyles(theme => ({
   stats: {
-    backgroundColor: '#cbcbcb',
-    border: '1px solid #c54e09'
+    backgroundColor: 'transparent',
+    border: '1px solid rgba(255,255,255, .2)',
+    height: 300
   }
 }))
 

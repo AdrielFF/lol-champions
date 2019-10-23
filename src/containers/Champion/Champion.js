@@ -42,12 +42,9 @@ class Champion extends React.Component {
             container
             justify='center'
             style={{
-              background:
-                "linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1)), url('https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-" +
-                champion.id.toLowerCase() +
-                '.jpg',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100%'
+              backgroundImage: `url('https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-${champion.id.toLowerCase()}.jpg`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat'
             }}
             className={classes.championContainer}
           >
