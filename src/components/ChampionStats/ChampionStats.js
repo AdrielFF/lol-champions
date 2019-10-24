@@ -1,14 +1,20 @@
-import React from 'react'
-import styles from './styles'
-import { List, ListItem, ListItemIcon, Grid } from '@material-ui/core'
-import Chart from 'react-google-charts'
+import React from "react"
+import styles from "./styles"
+import {
+  // List,
+  // ListItem,
+  // ListItemIcon,
+  Grid,
+  CircularProgress,
+} from "@material-ui/core"
+import Chart from "react-google-charts"
 
-export default function ChampionStats ({ champion: { stats, info } }) {
+export default function ChampionStats({ champion: { stats, info } }) {
   const classes = styles()
 
-  const getPerLevelStats = regenStats => {
-    if (regenStats) return `(+${stats.hpperlevel} per level)`
-  }
+  // const getPerLevelStats = regenStats => {
+  //   if (regenStats) return `(+${stats.hpperlevel} per level)`
+  // }
 
   return (
     <div className={classes.stats}>
@@ -44,53 +50,56 @@ export default function ChampionStats ({ champion: { stats, info } }) {
       </List> */}
       <Grid item sm={7}>
         <Chart
-          width='100%'
+          width="100%"
           height={300}
-          chartType='BarChart'
-          loader={<div>Loading...</div>}
+          chartType="BarChart"
+          loader={<CircularProgress className={classes.loader} />}
           data={[
             [
-              '',
-              '',
-              { role: 'style' },
+              "",
+              "",
+              { role: "style" },
               {
-                role: 'annotation',
-                type: 'string',
-                calc: 'stringify'
-              }
+                role: "annotation",
+                type: "string",
+                calc: "stringify",
+              },
             ],
-            ['Attack', info.attack, '#fb4545', `${info.attack}/10`],
-            ['Defense', info.defense, '#299027', `${info.defense}/10`],
-            ['Magic', info.magic, '#383ffb', `${info.magic}/10`],
+            ["Attack", info.attack, "#fb4545", `${info.attack}/10`],
+            ["Defense", info.defense, "#299027", `${info.defense}/10`],
+            ["Magic", info.magic, "#383ffb", `${info.magic}/10`],
             [
-              'Difficulty',
+              "Difficulty",
               info.difficulty,
-              'color: #8620bd',
-              `${info.difficulty}/10`
-            ]
+              "color: #8620bd",
+              `${info.difficulty}/10`,
+            ],
           ]}
           options={{
             animation: {
               startup: true,
-              easing: 'in',
-              duration: 500
+              easing: "in",
+              duration: 500,
             },
-            backgroundColor: { fill: 'transparent' },
-            legend: { position: 'none' },
+            backgroundColor: { fill: "transparent" },
+            legend: { position: "none" },
             hAxis: {
-              gridlines: { color: 'transparent' },
-              baselineColor: 'transparent',
-              textPosition: 'none'
+              gridlines: { color: "transparent" },
+              baselineColor: "transparent",
+              textPosition: "none",
             },
             vAxis: {
               textStyle: {
-                color: '#fff'
-              }
+                color: "#fff",
+              },
             },
             chartArea: {
-              width: '100%',
-              left: '20%'
-            }
+              width: "100%",
+              left: "20%",
+            },
+            tooltip: {
+              trigger: "none",
+            },
           }}
         />
       </Grid>
