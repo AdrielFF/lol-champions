@@ -32,6 +32,15 @@ class Champions extends React.Component {
   }
 
   filterChampions(inputValue) {
+    if (inputValue === "juninho") {
+      return this.setState({
+        ...this.state,
+        filteredChampions: this.state.champions.filter(champion =>
+          champion.name.toLowerCase().includes("alistar")
+        ),
+      })
+    }
+
     this.setState({
       ...this.state,
       filteredChampions: this.state.champions.filter(champion =>
