@@ -4,7 +4,7 @@ import { Container, Grid } from "@material-ui/core"
 import ChampionsList from "../../components/ChampionsList"
 import { withStyles } from "@material-ui/styles"
 import Header from "../../components/Header"
-import FilerInput from "../../components/FilerInput"
+import FilterInput from "../../components/FilterInput"
 
 class Champions extends React.Component {
   constructor() {
@@ -66,7 +66,7 @@ class Champions extends React.Component {
         <Container maxWidth="md" className={classes.championsContainer}>
           <Grid container justify="flex-end">
             <Grid item md={3} className={classes.searchInput}>
-              <FilerInput
+              <FilterInput
                 value={this.state.searchInputValue}
                 handleChange={this.handleChange.bind(this)}
               />

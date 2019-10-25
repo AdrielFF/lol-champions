@@ -3,7 +3,7 @@ import styles from "./styles"
 import { Paper, InputBase, IconButton } from "@material-ui/core"
 import SearchIcon from "@material-ui/icons/Search"
 
-export default function FilerInput(props) {
+export default function FilterInput(props) {
   const classes = styles()
 
   return (

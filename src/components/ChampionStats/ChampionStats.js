@@ -1,54 +1,24 @@
 import React from "react"
 import styles from "./styles"
 import {
-  // List,
-  // ListItem,
-  // ListItemIcon,
+  List,
+  ListItem,
   Grid,
   CircularProgress,
+  Typography,
 } from "@material-ui/core"
 import Chart from "react-google-charts"
 
 export default function ChampionStats({ champion: { stats, info } }) {
   const classes = styles()
 
-  // const getPerLevelStats = regenStats => {
-  //   if (regenStats) return `(+${stats.hpperlevel} per level)`
-  // }
+  const getPerLevelStats = regenStats => {
+    if (regenStats) return `(+${stats.hpperlevel} per level)`
+  }
 
   return (
-    <div className={classes.stats}>
-      {/* <List>
-        <ListItem>
-          Health: {stats.hp}
-          {getPerLevelStats(stats.hpperlevel)}
-        </ListItem>
-        <ListItem>
-          Attack Damage: {stats.attackdamage}
-          {getPerLevelStats(stats.attackdamageperlevel)}
-        </ListItem>
-        <ListItem>
-          Attack Speed: {stats.attackspeed}
-          {getPerLevelStats(stats.attackspeedperlevel)}
-        </ListItem>
-        <ListItem>
-          Movement Speed: {stats.movespeed}
-          {getPerLevelStats(stats.mpperlevel)}
-        </ListItem>
-        <ListItem>
-          Health Regen: {stats.hpregen}
-          {getPerLevelStats(stats.hpregenperlevel)}
-        </ListItem>
-        <ListItem>
-          Armor: {stats.armor}
-          {getPerLevelStats(stats.armorperlevel)}
-        </ListItem>
-        <ListItem>
-          Magic Resist: {stats.spellblock}
-          {getPerLevelStats(stats.spellblockperlevel)}
-        </ListItem>
-      </List> */}
-      <Grid item sm={7}>
+    <Grid container className={classes.stats}>
+      <Grid item sm={7} className={classes.chart}>
         <Chart
           width="100%"
           height={300}
@@ -103,6 +73,52 @@ export default function ChampionStats({ champion: { stats, info } }) {
           }}
         />
       </Grid>
-    </div>
+      <Grid item md={5}>
+        <List>
+          <ListItem>
+            <Typography variant="subtitle2">
+              Health: {stats.hp}
+              {getPerLevelStats(stats.hpperlevel)}
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="subtitle2">
+              Attack Damage: {stats.attackdamage}
+              {getPerLevelStats(stats.attackdamageperlevel)}
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="subtitle2">
+              Attack Speed: {stats.attackspeed}
+              {getPerLevelStats(stats.attackspeedperlevel)}
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="subtitle2">
+              Movement Speed: {stats.movespeed}
+              {getPerLevelStats(stats.mpperlevel)}
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="subtitle2">
+              Health Regen: {stats.hpregen}
+              {getPerLevelStats(stats.hpregenperlevel)}
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="subtitle2">
+              Armor: {stats.armor}
+              {getPerLevelStats(stats.armorperlevel)}
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="subtitle2">
+              Magic Resist: {stats.spellblock}
+              {getPerLevelStats(stats.spellblockperlevel)}
+            </Typography>
+          </ListItem>
+        </List>
+      </Grid>
+    </Grid>
   )
 }
