@@ -1,65 +1,107 @@
-import React from "react"
-import { withStyles } from "@material-ui/styles"
-import { Grid } from "@material-ui/core"
-import styles from "./styles"
-import Header from "../../components/Header"
-import ChampionHeader from "../../components/ChampionHeader"
-import ChampionInfo from "../../components/ChampionInfo"
+import React from 'react'
+import { withStyles } from '@material-ui/styles'
+import { Grid } from '@material-ui/core'
+import styles from './styles'
+import Header from '../../components/Header'
+import ChampionHeader from '../../components/ChampionHeader'
+import ChampionInfo from '../../components/ChampionInfo'
 
 class Champion extends React.Component {
-  constructor() {
+  constructor () {
     super()
 
     this.state = {
       champion: null,
-      value: 0,
+      spellValue: 0,
+      currentSkin: 0,
+      skins: []
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     const { params } = this.props.match
     fetch(
-      `https://ddragon.leagueoflegends.com/cdn/9.20.1/data/en_US/champion/${params.id}.json`
+      `https://ddragon.leagueoflegends.com/cdn/9.20.1/data/en_US/champion/${
+        params.id
+      }.json`
     )
-      .then(res => res.json())
+      .then(res => (res.status === 200 ? res.json() : 'error'))
       .then(({ data }) => {
-        this.setState({
-          champion: data[params.id],
-        })
+        if (data !== 'error') {
+          this.setState({
+            champion: data[params.id],
+            skins: data[params.id].skins.map(skin => ({
+              name: skin.name,
+              src: `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
+                params.id
+              }_${skin.num}.jpg`
+            })),
+            currentSkin: 0
+          })
+        }
       })
   }
 
-  handleChange(_, newValue) {
+  skinHandleCLick (nextSKin) {
+    console.log(this.state.currentSkin)
+    const { currentSkin, skins } = this.state
+    if (nextSKin === 'foward') {
+      if (currentSkin === skins.length - 1) {
+        return this.setState({
+          currentSkin: 0
+        })
+      }
+
+      this.setState({
+        currentSkin: this.state.currentSkin + 1
+      })
+    } else {
+      if (currentSkin === 0) {
+        return this.setState({
+          currentSkin: skins.length - 1
+        })
+      }
+      this.setState({
+        currentSkin: this.state.currentSkin - 1
+      })
+    }
+    console.log(this.state.currentSkin)
+  }
+
+  handleChange (_, newValue) {
     this.setState({
       ...this.state,
-      value: newValue,
+      spellValue: newValue
     })
   }
 
-  render() {
-    const { champion, value } = this.state
+  render () {
+    const { champion, spellValue, skinValue, skins, currentSkin } = this.state
     const { classes } = this.props
-
     return (
       <>
         <Header />
         {champion && (
           <Grid
             container
-            justify="center"
+            justify='center'
             style={{
               backgroundImage: `url('https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-${champion.id.toLowerCase()}.jpg`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat'
             }}
             className={classes.championContainer}
           >
             <Grid item sm={9}>
               <ChampionHeader champion={champion} />
               <ChampionInfo
+                currentSkin={currentSkin}
+                skins={skins}
                 champion={champion}
-                value={value}
+                spellValue={spellValue}
+                skinValue={skinValue}
                 handleChange={this.handleChange.bind(this)}
+                skinHandleCLick={this.skinHandleCLick.bind(this)}
               />
             </Grid>
           </Grid>
