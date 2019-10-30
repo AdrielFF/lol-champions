@@ -1,11 +1,9 @@
 import React from 'react'
 import styles from './styles'
 import { Paper, Grid } from '@material-ui/core'
-import ChampionStats from '../ChampionStats/ChampionStats'
-import ChampionSpells from '../ChampionSpells'
-import ChampionSkins from '../ChampionSkins'
+import { Stats, Spells, Skins } from '../../champion/'
 
-export default function ChampionInfo (props) {
+export default function Info (props) {
   const {
     champion,
     spellValue,
@@ -18,10 +16,10 @@ export default function ChampionInfo (props) {
   const classes = styles()
 
   return (
-    <Paper className={classes.championInfo}>
+    <Paper className={classes.info}>
       <Grid container justify='space-around'>
         <Grid item lg={4} className={classes.imageWrapper}>
-          <ChampionSkins
+          <Skins
             handleCLick={skinHandleCLick}
             currentSkin={currentSkin}
             skins={skins}
@@ -30,8 +28,8 @@ export default function ChampionInfo (props) {
         </Grid>
         <Grid item lg={7}>
           <Grid container direction='column' className={classes.statsWrapper}>
-            <ChampionStats champion={champion} />
-            <ChampionSpells
+            <Stats champion={champion} />
+            <Spells
               champion={champion}
               value={spellValue}
               handleChange={handleChange}

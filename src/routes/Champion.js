@@ -1,7 +1,6 @@
 import React from 'react'
-import Champion from '../containers/Champion'
+import Champion from '../containers/champion'
 
-
-export default function() {
+export default function () {
   return <Champion />
 }
