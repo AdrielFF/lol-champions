@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Router, Link, Switch } from 'react-router-dom'
 
-import Champion from './Champion'
-import Champions from './Champions'
+import Champion from './champion'
+import Champions from './champions'
 
 export default function () {
   return (

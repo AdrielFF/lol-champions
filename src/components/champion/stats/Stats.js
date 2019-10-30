@@ -1,15 +1,15 @@
-import React from "react"
-import styles from "./styles"
+import React from 'react'
+import styles from './styles'
 import {
   List,
   ListItem,
   Grid,
   CircularProgress,
-  Typography,
-} from "@material-ui/core"
-import Chart from "react-google-charts"
+  Typography
+} from '@material-ui/core'
+import Chart from 'react-google-charts'
 
-export default function ChampionStats({ champion: { stats, info } }) {
+export default function Stats ({ champion: { stats, info } }) {
   const classes = styles()
 
   const getPerLevelStats = regenStats => {
@@ -20,99 +20,99 @@ export default function ChampionStats({ champion: { stats, info } }) {
     <Grid container className={classes.stats}>
       <Grid item sm={7} className={classes.chart}>
         <Chart
-          width="100%"
+          width='100%'
           height={300}
-          chartType="BarChart"
+          chartType='BarChart'
           loader={<CircularProgress className={classes.loader} />}
           data={[
             [
-              "",
-              "",
-              { role: "style" },
+              '',
+              '',
+              { role: 'style' },
               {
-                role: "annotation",
-                type: "string",
-                calc: "stringify",
-              },
+                role: 'annotation',
+                type: 'string',
+                calc: 'stringify'
+              }
             ],
-            ["Attack", info.attack, "#fb4545", `${info.attack}/10`],
-            ["Defense", info.defense, "#299027", `${info.defense}/10`],
-            ["Magic", info.magic, "#383ffb", `${info.magic}/10`],
+            ['Attack', info.attack, '#fb4545', `${info.attack}/10`],
+            ['Defense', info.defense, '#299027', `${info.defense}/10`],
+            ['Magic', info.magic, '#383ffb', `${info.magic}/10`],
             [
-              "Difficulty",
+              'Difficulty',
               info.difficulty,
-              "color: #8620bd",
-              `${info.difficulty}/10`,
-            ],
+              'color: #8620bd',
+              `${info.difficulty}/10`
+            ]
           ]}
           options={{
             animation: {
               startup: true,
-              easing: "in",
-              duration: 500,
+              easing: 'in',
+              duration: 500
             },
-            backgroundColor: { fill: "transparent" },
-            legend: { position: "none" },
+            backgroundColor: { fill: 'transparent' },
+            legend: { position: 'none' },
             hAxis: {
-              gridlines: { color: "transparent" },
-              baselineColor: "transparent",
-              textPosition: "none",
+              gridlines: { color: 'transparent' },
+              baselineColor: 'transparent',
+              textPosition: 'none'
             },
             vAxis: {
               textStyle: {
-                color: "#fff",
-              },
+                color: '#fff'
+              }
             },
             chartArea: {
-              width: "100%",
-              left: "20%",
+              width: '100%',
+              left: '20%'
             },
             tooltip: {
-              trigger: "none",
-            },
+              trigger: 'none'
+            }
           }}
         />
       </Grid>
       <Grid item md={5}>
         <List>
           <ListItem>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               Health: {stats.hp}
               {getPerLevelStats(stats.hpperlevel)}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               Attack Damage: {stats.attackdamage}
               {getPerLevelStats(stats.attackdamageperlevel)}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               Attack Speed: {stats.attackspeed}
               {getPerLevelStats(stats.attackspeedperlevel)}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               Movement Speed: {stats.movespeed}
               {getPerLevelStats(stats.mpperlevel)}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               Health Regen: {stats.hpregen}
               {getPerLevelStats(stats.hpregenperlevel)}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               Armor: {stats.armor}
               {getPerLevelStats(stats.armorperlevel)}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               Magic Resist: {stats.spellblock}
               {getPerLevelStats(stats.spellblockperlevel)}
             </Typography>

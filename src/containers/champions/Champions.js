@@ -1,10 +1,10 @@
 import React from "react"
 import styles from "./styles"
 import { Container, Grid } from "@material-ui/core"
-import ChampionsList from "../../components/ChampionsList"
+import ChampionsList from "../../components/championsList"
 import { withStyles } from "@material-ui/styles"
-import Header from "../../components/Header"
-import FilterInput from "../../components/FilterInput"
+import Header from "../../components/header"
+import FilterInput from "../../components/filterInput"
 
 class Champions extends React.Component {
   constructor() {

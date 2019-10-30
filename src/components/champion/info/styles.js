@@ -4,7 +4,7 @@ const styles = makeStyles(theme => ({
   statsWrapper: {
     height: '100%'
   },
-  championInfo: {
+  info: {
     minHeight: 500,
     marginBottom: '2em',
     padding: '1em',
