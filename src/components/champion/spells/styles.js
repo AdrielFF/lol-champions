@@ -1,6 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
-
-const styles = makeStyles(theme => ({
+const styles = theme => ({
   spellsWrapper: {
     width: '100%',
     flexGrow: 1,
@@ -20,6 +18,6 @@ const styles = makeStyles(theme => ({
   flexContainer: {
     justifyContent: 'center'
   }
-}))
+})
 
 export default styles
