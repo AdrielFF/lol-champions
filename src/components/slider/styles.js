@@ -1,12 +1,14 @@
 const styles = props => ({
   carouselWrapper: {
     position: 'relative',
-    width: '100%',
-    height: '100%'
+    width: 308,
+    height: '100%',
+    margin: '0 auto',
+    border: "1px solid rgba(255,255,255, .2)"
   },
   carouselBackArrow: {
     position: 'absolute',
-    left: 0,
+    left: 5,
     top: '50%',
     transform: 'translateY(-50%)',
     cursor: 'pointer',
