@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { withStyles } from '@material-ui/styles'
 import styles from './styles'
 import { Typography } from '@material-ui/core'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 function Slider(props) {
     const { classes } = props
     const [currentItem, setCurrentItem] = useState(0)
-    const [items, setItems] = useState(props.items)
+    const [items] = useState(props.items)
 
   const handleClick = nextItem => {
 

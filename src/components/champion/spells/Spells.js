@@ -49,6 +49,7 @@ function Spells(props) {
                 src={`http://ddragon.leagueoflegends.com/cdn/9.21.1/img/spell/${
                   spell.image.full
                 }`}
+                alt={`${spell.name} skill`}
               />
             }
             aria-label={spell.name}

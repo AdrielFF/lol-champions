@@ -1,7 +1,6 @@
 import React from "react"
 import styles from "./styles"
-import { Paper, InputBase, IconButton } from "@material-ui/core"
-import SearchIcon from "@material-ui/icons/Search"
+import { Paper, InputBase } from "@material-ui/core"
 
 export default function FilterInput(props) {
   const classes = styles()
