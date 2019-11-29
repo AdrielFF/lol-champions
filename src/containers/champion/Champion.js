@@ -25,7 +25,7 @@ function Champion(props) {
           setChampion(data[params.id])
           setSkins(data[params.id].skins.map(skin => ({
             title: skin.name !== 'default' ? skin.name : data[params.id].name,
-            src: `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
+            src: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
               params.id
             }_${skin.num}.jpg`
           })))
