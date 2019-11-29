@@ -5,7 +5,7 @@ import { Stats, Spells } from '../../champion/'
 import Slider from '../../slider'
 
 export default function Info (props) {
-  const { champion, spellValue, handleChange, skins } = props
+  const { champion, skins } = props
 
   const classes = styles()
 
