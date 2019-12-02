@@ -8,10 +8,10 @@ export default function Header ({ champion }) {
     <Grid item xs={11} className={classes.header}>
       <Paper className={classes.paper}>
         <Typography gutterBottom component='h1' variant='h4'>
-          {champion.name}
+          {champion && champion.name}
         </Typography>
         <Box fontStyle='italic'>
-          <Typography>{champion.title}</Typography>
+          <Typography>{champion && champion.title}</Typography>
         </Box>
       </Paper>
     </Grid>

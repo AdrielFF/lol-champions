@@ -36,8 +36,8 @@ function Champion(props) {
   return (
     <>
       <DefaultLayout>
-        {champion && (
-          <Grid
+
+          {/* <Grid
             container
             itemxs={12}
             justify='center'
@@ -47,13 +47,13 @@ function Champion(props) {
               backgroundRepeat: 'no-repeat',
             }}
             className={classes.championContainer}
-          >
+          > */}
             <Grid item xs={12}>
               <ChampionHeader champion={champion} />
               <Info skins={skins} champion={champion} />
             </Grid>
-          </Grid>
-        )}
+          {/* </Grid> */}
+
       </DefaultLayout>
     </>
   )

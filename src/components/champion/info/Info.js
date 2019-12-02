@@ -25,10 +25,12 @@ export default function Info (props) {
           <Skins />
         </Grid>
         <Grid item xs={11} md={7}>
-          <Grid item container direction='column' className={classes.statsWrapper} xs={12} >
-            <Stats champion={champion} />
-            <Spells champion={champion} />
-          </Grid>
+          {champion && (
+            <Grid item container direction='column' className={classes.statsWrapper} xs={12} >
+              <Stats champion={champion} />
+              <Spells champion={champion} />
+            </Grid>
+          )}
         </Grid>
       </Paper>
     </Grid>

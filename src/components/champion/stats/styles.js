@@ -6,8 +6,7 @@ const styles = makeStyles(theme => ({
     backgroundColor: "transparent",
     border: "1px solid rgba(255,255,255, .2)",
     width: '100%',
-    minHeight: 300,
-    height: 466
+    minHeight: 466
   },
   chart: {
     position: "relative",
