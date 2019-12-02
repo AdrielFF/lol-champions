@@ -7,7 +7,8 @@ const styles = makeStyles(theme => ({
   paper: {
     padding: '1em',
     backgroundColor: 'rgba(19, 19, 19, .85)',
-    color: '#fff'
+    color: '#fff',
+    minHeight: 106
   }
 }))
 
