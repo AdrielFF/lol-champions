@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/styles'
 
 const styles = makeStyles(theme => ({
   header: {
-    margin: '11em auto'
+    margin: '2em auto'
   },
   paper: {
     padding: '1em',

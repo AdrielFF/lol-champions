@@ -13,7 +13,8 @@ const styles = theme => ({
     backgroundColor: 'transparent'
   },
   button: {
-    minWidth: 64
+    width: 67,
+    minWidth: 0
   },
   flexContainer: {
     justifyContent: 'center'

@@ -1,7 +1,8 @@
 const styles = props => ({
   carouselWrapper: {
     position: 'relative',
-    width: 308,
+    width: '100%',
+    maxWidth: 268,
     height: '100%',
     margin: '0 auto',
     border: "1px solid rgba(255,255,255, .2)"
@@ -26,7 +27,8 @@ const styles = props => ({
     position: 'absolute',
     bottom: 0,
     top: 0,
-    opacity: 0
+    opacity: 0,
+    width: '100%'
   },
   itemNameWrapper: {
     position: 'absolute',
@@ -43,6 +45,9 @@ const styles = props => ({
     zIndex: 99,
     opacity: 1,
     width: '100%'
+  },
+  sliderImage: {
+    maxWidth: 268
   }
 })
 

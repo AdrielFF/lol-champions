@@ -1,7 +1,7 @@
 const styles = {
   championsContainer: {
     backgroundColor: "#171717",
-    marginTop: "4em",
+    margin: "4em auto",
     padding: ".5em",
   },
   searchInput: {
