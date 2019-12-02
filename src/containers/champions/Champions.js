@@ -3,8 +3,8 @@ import styles from "./styles"
 import { Container, Grid } from "@material-ui/core"
 import ChampionsList from "../../components/championsList"
 import { withStyles } from "@material-ui/styles"
-import Header from "../../components/header"
 import FilterInput from "../../components/filterInput"
+import DefaultLayout from '../../layouts/defaultLayout/DefaultLayout'
 
  function Champions(props) {
   const { classes } = props
@@ -41,8 +41,7 @@ import FilterInput from "../../components/filterInput"
   }
 
   return(
-    <>
-      <Header />
+    <DefaultLayout>
       <Container maxWidth="md" className={classes.championsContainer}>
         <Grid container justify="flex-end">
           <Grid item md={3} className={classes.searchInput}>
@@ -54,7 +53,7 @@ import FilterInput from "../../components/filterInput"
         </Grid>
         <ChampionsList champions={filteredChampions} />
       </Container>
-    </>
+    </DefaultLayout>
   )
 }
 

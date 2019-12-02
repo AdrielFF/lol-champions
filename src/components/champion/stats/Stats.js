@@ -18,7 +18,7 @@ export default function Stats ({ champion: { stats, info } }) {
 
   return (
     <Grid container className={classes.stats}>
-      <Grid item sm={7} className={classes.chart}>
+      <Grid item xs={11} className={classes.chart}>
         <Chart
           width='100%'
           height={300}
@@ -73,51 +73,57 @@ export default function Stats ({ champion: { stats, info } }) {
           }}
         />
       </Grid>
-      <Grid item md={5}>
-        <List>
-          <ListItem>
-            <Typography variant='subtitle2'>
-              Health: {stats.hp}
-              {getPerLevelStats(stats.hpperlevel)}
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant='subtitle2'>
-              Attack Damage: {stats.attackdamage}
-              {getPerLevelStats(stats.attackdamageperlevel)}
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant='subtitle2'>
-              Attack Speed: {stats.attackspeed}
-              {getPerLevelStats(stats.attackspeedperlevel)}
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant='subtitle2'>
-              Movement Speed: {stats.movespeed}
-              {getPerLevelStats(stats.mpperlevel)}
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant='subtitle2'>
-              Health Regen: {stats.hpregen}
-              {getPerLevelStats(stats.hpregenperlevel)}
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant='subtitle2'>
-              Armor: {stats.armor}
-              {getPerLevelStats(stats.armorperlevel)}
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant='subtitle2'>
-              Magic Resist: {stats.spellblock}
-              {getPerLevelStats(stats.spellblockperlevel)}
-            </Typography>
-          </ListItem>
-        </List>
+      <Grid container justify="center">
+        <Grid item md={5}>
+          <List>
+            <ListItem>
+              <Typography variant='subtitle2'>
+                Health: {stats.hp}
+                {getPerLevelStats(stats.hpperlevel)}
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant='subtitle2'>
+                Attack Damage: {stats.attackdamage}
+                {getPerLevelStats(stats.attackdamageperlevel)}
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant='subtitle2'>
+                Attack Speed: {stats.attackspeed}
+                {getPerLevelStats(stats.attackspeedperlevel)}
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant='subtitle2'>
+                Movement Speed: {stats.movespeed}
+                {getPerLevelStats(stats.mpperlevel)}
+              </Typography>
+            </ListItem>
+          </List>
+        </Grid>
+        <Grid item md={5}>
+          <List>
+            <ListItem>
+              <Typography variant='subtitle2'>
+                Health Regen: {stats.hpregen}
+                {getPerLevelStats(stats.hpregenperlevel)}
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant='subtitle2'>
+                Armor: {stats.armor}
+                {getPerLevelStats(stats.armorperlevel)}
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant='subtitle2'>
+                Magic Resist: {stats.spellblock}
+                {getPerLevelStats(stats.spellblockperlevel)}
+              </Typography>
+            </ListItem>
+          </List>
+        </Grid>
       </Grid>
     </Grid>
   )

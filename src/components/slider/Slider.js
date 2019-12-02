@@ -40,7 +40,7 @@ function Slider(props) {
         key={index}
         className={`${classes.itemWrapper} ${getActiveClass(index)}`}
       >
-        <img src={item.src} alt='' />
+        <img src={item.src} alt='' className={classes.sliderImage} />
         <div className={classes.itemNameWrapper}>
           <Typography>{getItemDescription()}</Typography>
         </div>

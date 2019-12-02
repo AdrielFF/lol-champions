@@ -12,18 +12,25 @@ export default function Info (props) {
   const Skins = () => <Slider items={skins} />
 
   return (
-    <Paper className={classes.info}>
-      <Grid container justify='space-around'>
-        <Grid item lg={4} className={classes.imageWrapper}>
+    <Grid
+     item
+     container
+     xs={11}
+     className={classes.infoWrapper}
+     direction="column"
+     alignItems="center"
+    >
+      <Paper className={classes.infoPaper}>
+        <Grid item className={classes.imageWrapper} xs={11} md={4}>
           <Skins />
         </Grid>
-        <Grid item lg={7}>
-          <Grid container direction='column' className={classes.statsWrapper}>
+        <Grid item xs={11} md={7}>
+          <Grid item container direction='column' className={classes.statsWrapper} xs={12} >
             <Stats champion={champion} />
             <Spells champion={champion} />
           </Grid>
         </Grid>
-      </Grid>
-    </Paper>
+      </Paper>
+    </Grid>
   )
 }

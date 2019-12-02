@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { withStyles } from '@material-ui/styles'
 import { Grid } from '@material-ui/core'
 import styles from './styles'
-import Header from '../../components/header'
 import { default as ChampionHeader } from '../../components/champion/header'
 import Info from '../../components/champion/info'
+import DefaultLayout from "../../layouts/defaultLayout/DefaultLayout";
 
 function Champion(props) {
   const { classes } = props
@@ -35,24 +35,26 @@ function Champion(props) {
 
   return (
     <>
-      <Header />
-      {champion && (
-        <Grid
-          container
-          justify='center'
-          style={{
-            backgroundImage: `url('https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-${champion.id.toLowerCase()}.jpg`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          }}
-          className={classes.championContainer}
-        >
-          <Grid item sm={9}>
-            <ChampionHeader champion={champion} />
-            <Info skins={skins} champion={champion} />
+      <DefaultLayout>
+        {champion && (
+          <Grid
+            container
+            itemxs={12}
+            justify='center'
+            style={{
+              backgroundImage: `url('https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-${champion.id.toLowerCase()}.jpg`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+            className={classes.championContainer}
+          >
+            <Grid item xs={12}>
+              <ChampionHeader champion={champion} />
+              <Info skins={skins} champion={champion} />
+            </Grid>
           </Grid>
-        </Grid>
-      )}
+        )}
+      </DefaultLayout>
     </>
   )
 }

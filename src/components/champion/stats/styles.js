@@ -5,10 +5,13 @@ const styles = makeStyles(theme => ({
     position: "relative",
     backgroundColor: "transparent",
     border: "1px solid rgba(255,255,255, .2)",
+    width: '100%',
     minHeight: 300,
+    height: 466
   },
   chart: {
     position: "relative",
+    height: 300
   },
   loader: {
     position: "absolute",

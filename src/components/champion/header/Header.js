@@ -5,9 +5,9 @@ import styles from './styles'
 export default function Header ({ champion }) {
   const classes = styles()
   return (
-    <Grid item sm={11} className={classes.header}>
+    <Grid item xs={11} className={classes.header}>
       <Paper className={classes.paper}>
-        <Typography gutterBottom component='h1' variant='h3'>
+        <Typography gutterBottom component='h1' variant='h4'>
           {champion.name}
         </Typography>
         <Box fontStyle='italic'>
